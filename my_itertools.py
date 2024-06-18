@@ -1,4 +1,4 @@
-from itertools import Iterable
+from collections.abc import Iterable
 from typing import TypeVar
 
 _T = TypeVar("_T")
@@ -12,26 +12,21 @@ class _Unique:
 
 _unique = _Unique()
 
-def my_zip(*ls:Iterable[_T], strict=False):
+def zip(*ls:Iterable[_T], strict=False):
     n = len(ls)
-    for l in ls:
-        iter(l)
+    ls = [iter(l) for l in ls]
     try:
         while True:
             ans = ()
             for l in ls:
-                ans += (next(l))
+                ans += (next(l), )
             yield ans
     except StopIteration:
         if strict:
-            if n==1:
+            if ans.__len__() == 0:
                 return
-            for i in range(n-1, 0, -1):
-                try:
-                    next(i)
-                    raise ValueError
-                except StopIteration:
-                    continue      
+            else:
+                raise ValueError("All iterables should be size-equally when strict was set as True.")
         else:
             return
 
