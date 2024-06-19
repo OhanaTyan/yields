@@ -11,7 +11,7 @@ In fact, the running result of the file `demo/a.py` proves that using the `yield
 ```bash
 # result on my computer
 ssum = 99999990000000
-Python built-in zip time cost: 1.657429700018838s
+Python built-in zip time cost: 1.4447058999212459s
 ssum = 99999990000000
-Python my_zip time cost: 2.7339518000371754s
+Python my_zip time cost: 2.8954155000392348s
 ```
