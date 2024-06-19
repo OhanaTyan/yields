@@ -9,10 +9,7 @@ def my_zip(l1, l2):
     except StopIteration:
         return
 
-def my_zip(l1, l2):
-    for i in range(min(len(l1), len(l2))):
-        yield l1[i], l2[i]
-    
+
 l = list(range(10000000))
 
 start = time.perf_counter()
