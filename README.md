@@ -6,7 +6,7 @@ Do you know yield in Python?
 
 This repo attempts to re-write some built-in Python functions and classes using the `yield` statement **just for fun**.
 
-The running result of the file `demo/a.py` proves that using the `yield` statement for rewriting actually makes the execution slower.
+In fact, the running result of the file `demo/a.py` proves that using the `yield` statement for rewriting actually makes the execution slower.
 
 ```bash
 # result on my computer
